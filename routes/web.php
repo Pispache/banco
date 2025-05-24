@@ -14,6 +14,14 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/contacto', function () {
+    return view('contacto');
+});
+
+Route::get('/simulador', function () {
+    return view('simulador');
+});
+
 Route::get('/dashboard', function () {
     return redirect()->route('users.index');
 })->middleware(['auth', 'verified'])->name('dashboard');

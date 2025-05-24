@@ -108,6 +108,76 @@
             border-color: #7f53ff;
             text-decoration: none;
         }
+
+        .login-actions-row {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            gap: 18px;
+            margin-top: 18px;
+        }
+        .login-btn-custom {
+            background: linear-gradient(90deg, #7f53ff 60%, #6c47ff 100%);
+            color: #fff;
+            font-weight: 700;
+            border: none;
+            border-radius: 16px;
+            padding: 12px 32px;
+            font-size: 1.15rem;
+            box-shadow: 0 4px 16px rgba(127,83,255,0.10);
+            transition: background 0.2s;
+            outline: none;
+        }
+        .login-btn-custom:hover {
+            background: linear-gradient(90deg, #6c47ff 60%, #7f53ff 100%);
+        }
+        .register-btn-custom {
+            background: #fff;
+            color: #7f53ff;
+            border: 2px solid #7f53ff;
+            border-radius: 16px;
+            padding: 12px 32px;
+            font-weight: 700;
+            font-size: 1.15rem;
+            transition: all 0.2s;
+            box-shadow: 0 4px 16px rgba(127,83,255,0.08);
+            text-decoration: none;
+            display: inline-block;
+            outline: none;
+        }
+        .register-btn-custom:hover {
+            background: #7f53ff;
+            color: #fff;
+        }
+        .forgot-link-custom {
+            color: #7f53ff;
+            background: #fff;
+            border: 2px solid #7f53ff;
+            border-radius: 16px;
+            padding: 12px 32px;
+            font-weight: 600;
+            font-size: 1.08rem;
+            text-decoration: none;
+            transition: all 0.2s;
+            display: inline-block;
+        }
+        .forgot-link-custom:hover {
+            background: #f3ebff;
+            color: #6c47ff;
+            text-decoration: underline;
+        }
+        @media (max-width: 600px) {
+            .login-actions-row {
+                flex-direction: column;
+                gap: 10px;
+            }
+            .login-btn-custom, .register-btn-custom, .forgot-link-custom {
+                width: 100%;
+                padding: 12px 0;
+                font-size: 1rem;
+            }
+        }
     </style>
 </head>
 <body>
@@ -145,7 +215,12 @@
                                 {{ __('Forgot your password?') }}
                             </a>
                         @endif
-                        <button type="submit" class="login-btn">Iniciar sesión</button>
+                    </div>
+                    <div class="login-actions-row">
+                        <button type="submit" class="login-btn-custom">Iniciar sesión</button>
+                        @if (Route::has('register'))
+                            <a href="{{ route('register') }}" class="register-btn-custom">Registrarse</a>
+                        @endif
                     </div>
                 </form>
             </div>
