@@ -7,14 +7,6 @@
         <!--begin::Menu-->
         <div class="menu menu-column menu-title-gray-700 menu-state-title-primary menu-state-icon-primary menu-state-bullet-primary menu-arrow-gray-500 fw-semibold" id="#kt_aside_menu" data-kt-menu="true">
             <!--begin:Menu item-->
-            <div class="menu-item {{ Request::is('/') ? 'here' : '' }} py-2">
-                <a class="menu-link menu-center" href="/dashboard">
-                    <span class="menu-icon me-0">
-                        <i class="ki-outline ki-home-2 fs-2x"></i>
-                    </span>
-                    <span class="menu-title">Dashboard</span>
-                </a>
-            </div>
             
             <!-- Clientes -->
             <div data-kt-menu-trigger="{default: 'click', lg: 'hover'}" data-kt-menu-placement="right-start" class="menu-item {{ Request::is('users*') ? 'here' : '' }} py-2">

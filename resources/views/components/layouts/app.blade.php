@@ -7,7 +7,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<meta property="og:locale" content="en_US" />
 		<meta property="og:site_name" content="Quetenx Admin" />
-		<link rel="canonical" href="https://quetenx.com.ni" />
+		<link rel="canonical" href="https://banco-main-7x2urd.laravel.cloud" />
 		<link rel="shortcut icon" href="{{asset('assets/media/logos/qtxfav.ico')}}" />
 		<!--begin::Fonts(mandatory for all pages)-->
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,400,500,600,700" />
@@ -50,29 +50,7 @@
 					<x-layouts._header />
 					<!--end::Header-->
 					<!--begin::Toolbar-->
-					<div class="toolbar py-2" id="kt_toolbar">
-						<!--begin::Container-->
-						<div id="kt_toolbar_container" class="container-fluid d-flex align-items-center">
-							<!--begin::Page title-->
-							<div class="flex-grow-1 flex-shrink-0 me-5">
-								<!--begin::Page title-->
-								<div data-kt-swapper="true" data-kt-swapper-mode="prepend" data-kt-swapper-parent="{default: '#kt_content_container', 'lg': '#kt_toolbar_container'}" class="page-title d-flex align-items-center flex-wrap me-3 mb-5 mb-lg-0">
-									<!--begin::Title-->
-									<h1 class="d-flex align-items-center text-gray-900 fw-bold my-1 fs-3">Dashboard 
-									<!--begin::Separator-->
-									<span class="h-20px border-gray-200 border-start ms-3 mx-2"></span>
-									<!--end::Separator-->
-									<!--begin::Description-->
-									<small class="text-muted fs-7 fw-semibold my-1 ms-1"></small>
-									<!--end::Description--></h1>
-									<!--end::Title-->
-								</div>
-								<!--end::Page title-->
-							</div>
-							<!--end::Page title-->
-						</div>
-						<!--end::Container-->
-					</div>
+					
 					<!--end::Toolbar-->
 					<!--begin::Content-->
 					<div class="content d-flex flex-column flex-column-fluid" id="kt_content">

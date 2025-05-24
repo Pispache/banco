@@ -56,7 +56,6 @@
             font-size: 1rem;
             padding: 10px 18px;
             height: 44px;
-            margin-bottom: 8px;
             transition: border-color 0.2s;
         }
         .login-form input:focus {
@@ -69,7 +68,7 @@
             font-weight: 400;
             color: #222;
             font-size: 0.95rem;
-            margin-bottom: 1px;
+            margin-bottom: 0px;
             margin-left: 2px;
         }
         .login-btn {
@@ -125,77 +124,75 @@
                 <div class="mb-4 login-subtext">Completa los datos para registrarte</div>
                 <form method="POST" action="{{ route('register') }}" class="login-form">
                     @csrf
-        @csrf
+                    <!-- Name -->
+                    <div>
+                        <x-input-label for="name" :value="__('Name')" />
+                        <x-text-input id="name" class="block w-full" type="text" name="name" :value="old('name')" required autofocus autocomplete="name" />
+                        <x-input-error :messages="$errors->get('name')" />
+                    </div>
 
-        <!-- Name -->
-        <div>
-            <x-input-label for="name" :value="__('Name')" />
-            <x-text-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus autocomplete="name" />
-            <x-input-error :messages="$errors->get('name')" class="mt-2" />
-        </div>
+                    <!-- Email Address -->
+                    <div>
+                        <x-input-label for="email" :value="__('Email')" />
+                        <x-text-input id="email" class="block w-full" type="email" name="email" :value="old('email')" required autocomplete="username" />
+                        <x-input-error :messages="$errors->get('email')" />
+                    </div>
 
-        <!-- Email Address -->
-        <div class="mt-4">
-            <x-input-label for="email" :value="__('Email')" />
-            <x-text-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autocomplete="username" />
-            <x-input-error :messages="$errors->get('email')" class="mt-2" />
-        </div>
+                    <!-- DPI -->
+                    <div>
+                        <x-input-label for="dpi" :value="__('DPI')" />
+                        <x-text-input id="dpi" class="block w-full" type="text" name="dpi" :value="old('dpi')" required maxlength="13" minlength="13" />
+                        <x-input-error :messages="$errors->get('dpi')" />
+                    </div>
 
-        <!-- DPI -->
-        <div class="mt-4">
-            <x-input-label for="dpi" :value="__('DPI')" />
-            <x-text-input id="dpi" class="block mt-1 w-full" type="text" name="dpi" :value="old('dpi')" required maxlength="13" minlength="13" />
-            <x-input-error :messages="$errors->get('dpi')" class="mt-2" />
-        </div>
+                    <!-- Fecha de nacimiento -->
+                    <div>
+                        <x-input-label for="fecha_nacimiento" :value="__('Fecha de nacimiento')" />
+                        <x-text-input id="fecha_nacimiento" class="block w-full" type="date" name="fecha_nacimiento" :value="old('fecha_nacimiento')" required />
+                        <x-input-error :messages="$errors->get('fecha_nacimiento')" />
+                    </div>
 
-        <!-- Fecha de nacimiento -->
-        <div class="mt-4">
-            <x-input-label for="fecha_nacimiento" :value="__('Fecha de nacimiento')" />
-            <x-text-input id="fecha_nacimiento" class="block mt-1 w-full" type="date" name="fecha_nacimiento" :value="old('fecha_nacimiento')" required />
-            <x-input-error :messages="$errors->get('fecha_nacimiento')" class="mt-2" />
-        </div>
+                    <!-- Dirección -->
+                    <div>
+                        <x-input-label for="direccion" :value="__('Dirección')" />
+                        <x-text-input id="direccion" class="block w-full" type="text" name="direccion" :value="old('direccion')" required maxlength="255" />
+                        <x-input-error :messages="$errors->get('direccion')" />
+                    </div>
 
-        <!-- Dirección -->
-        <div class="mt-4">
-            <x-input-label for="direccion" :value="__('Dirección')" />
-            <x-text-input id="direccion" class="block mt-1 w-full" type="text" name="direccion" :value="old('direccion')" required maxlength="255" />
-            <x-input-error :messages="$errors->get('direccion')" class="mt-2" />
-        </div>
+                    <!-- Teléfono -->
+                    <div>
+                        <x-input-label for="telefono" :value="__('Teléfono')" />
+                        <x-text-input id="telefono" class="block w-full" type="text" name="telefono" :value="old('telefono')" required maxlength="15" />
+                        <x-input-error :messages="$errors->get('telefono')" />
+                    </div>
 
-        <!-- Teléfono -->
-        <div class="mt-4">
-            <x-input-label for="telefono" :value="__('Teléfono')" />
-            <x-text-input id="telefono" class="block mt-1 w-full" type="text" name="telefono" :value="old('telefono')" required maxlength="15" />
-            <x-input-error :messages="$errors->get('telefono')" class="mt-2" />
-        </div>
+                    <!-- Password -->
+                    <div>
+                        <x-input-label for="password" :value="__('Password')" />
 
-        <!-- Password -->
-        <div class="mt-4">
-            <x-input-label for="password" :value="__('Password')" />
+                        <x-text-input id="password" class="block w-full"
+                                        type="password"
+                                        name="password"
+                                        required autocomplete="new-password" />
 
-            <x-text-input id="password" class="block mt-1 w-full"
-                            type="password"
-                            name="password"
-                            required autocomplete="new-password" />
+                        <x-input-error :messages="$errors->get('password')" />
+                    </div>
 
-            <x-input-error :messages="$errors->get('password')" class="mt-2" />
-        </div>
+                    <!-- Confirm Password -->
+                    <div>
+                        <x-input-label for="password_confirmation" :value="__('Confirm Password')" />
 
-        <!-- Confirm Password -->
-        <div class="mt-4">
-            <x-input-label for="password_confirmation" :value="__('Confirm Password')" />
+                        <x-text-input id="password_confirmation" class="block mt-1 w-full"
+                                        type="password"
+                                        name="password_confirmation" required autocomplete="new-password" />
 
-            <x-text-input id="password_confirmation" class="block mt-1 w-full"
-                            type="password"
-                            name="password_confirmation" required autocomplete="new-password" />
+                        <x-input-error :messages="$errors->get('password_confirmation')" />
+                    </div>
 
-            <x-input-error :messages="$errors->get('password_confirmation')" class="mt-2" />
-        </div>
-
-        <div class="d-flex flex-column flex-md-row justify-content-between align-items-center mt-4 gap-2">
-            <a href="{{ route('login') }}" class="register-link">¿Ya tienes cuenta? Inicia sesión</a>
-            <button type="submit" class="login-btn">Registrarme</button>
-        </div>
+                    <div class="d-flex flex-column flex-md-row justify-content-between align-items-center mt-4 gap-2">
+                        <a href="{{ route('login') }}" class="register-link">Inicia sesión</a>
+                        <button type="submit" class="login-btn">Registrarme</button>
+                    </div>
                 </form>
             </div>
         </div>
