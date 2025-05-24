@@ -69,11 +69,6 @@
                                         <td>{{ $user->telefono }}</td>
                                         <td>
                                             <a href="{{ route('users.edit', $user) }}" class="btn btn-warning btn-sm">Editar</a>
-                                            <form action="{{ route('users.destroy', $user) }}" method="POST" style="display:inline-block;">
-                                                @csrf
-                                                @method('DELETE')
-                                                <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('¿Seguro que deseas eliminar este usuario?')">Eliminar</button>
-                                            </form>
                                         </td>
                                     </tr>
                                 @endforeach

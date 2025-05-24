@@ -46,6 +46,20 @@
                                         <input class="form-control w-100" type="text" name="telefono" value="{{ old('telefono', $user->telefono) }}" required />
                                     </div>
                                 </div>
+                                <!-- Password Section -->
+                                <div class="d-flex flex-column gap-3 mt-2">
+                                    <div class="alert alert-info p-2 mb-1" style="font-size:0.95em;">
+                                        Si deseas cambiar la contraseña, ingresa una nueva. Si no, deja estos campos vacíos.
+                                    </div>
+                                    <div class="fv-row flex-row-fluid">
+                                        <label class="form-label">Nueva contraseña</label>
+                                        <input class="form-control w-100" type="password" name="password" autocomplete="new-password" />
+                                    </div>
+                                    <div class="fv-row flex-row-fluid">
+                                        <label class="form-label">Confirmar nueva contraseña</label>
+                                        <input class="form-control w-100" type="password" name="password_confirmation" autocomplete="new-password" />
+                                    </div>
+                                </div>
                             </div>
                         </div>
                         <div class="card-footer d-flex justify-content-end gap-3">
